@@ -72,11 +72,10 @@ export const UserProvider = ({ children }: IUserProviderProps) => {
             setLoading(true);
             const {data}= await api.post<IUserLoginRegisterResponse>('/login', formData);
             localStorage.setItem("@TOKEN", data.accessToken);
-            localStorage.setItem("@USERID", data.user.id)
+            localStorage.setItem("@USERID", data.user.id);
             setUser(data.user);
             navigate('/shop');
             console.log(data);
-
         }
         catch (error) {
             console.log(error);
@@ -105,6 +104,7 @@ export const UserProvider = ({ children }: IUserProviderProps) => {
         }
 
     }
+
 
 
 
